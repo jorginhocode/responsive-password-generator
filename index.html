@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password Generator | Jorginho J.</title>
+  <link rel="stylesheet" href="assets/CSS/styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<body>
+  <main>
+    <button id="themeToggle" class="theme-toggle">
+      <i class="ri-moon-line"></i>
+    </button>
+
+    <div class="container">
+      <form id="passwordForm">
+        <p class="up">GENERATED PASSWORD</p>
+
+        <div class="password-buttons">
+          <p id="generatedPassword"></p>
+          <div class="password-buttons-2">
+          <button id="copyButton" type="button"><i class="ri-file-copy-line"></i></button>
+
+          </div>
+        </div>
+
+        <div id="notification" class="notification">Password copied successfully!</div>
+
+        <div class="charecters">
+          <div class="charecters-align">
+            <p>CHARACTER LENGTH:</p>
+            <span id="sliderValue">16</span>
+          </div>
+          <div class="input-container">
+            <p>4</p>
+            <input type="range" id="lengthSlider" name="length" min="4" max="32" step="1" value="16" />
+            <p>32</p>
+          </div>
+        </div>
+
+        <div class="options">
+          <p>SETTINGS</p>
+          <div class="cursor-pinter-container">
+            <div class="cursor-pointer">
+              <div class="select">
+                <label for="upper">Use uppercase</label>
+              </div>
+              <div class="icon">
+                <input type="checkbox" id="upper" name="upper" checked class="toggle-checkbox" />
+              </div>
+            </div>
+
+            <div class="cursor-pointer">
+              <div class="select">
+                <label for="lower">Use lowercase</label>
+              </div>
+              <div class="icon">
+                <input type="checkbox" id="lower" name="lower" checked class="toggle-checkbox" />
+              </div>
+            </div>
+
+            <div class="cursor-pointer">
+              <div class="select">
+                <label for="numbers">Use numbers</label>
+              </div>
+              <div class="icon">
+                <input type="checkbox" id="numbers" name="numbers" checked class="toggle-checkbox" />
+              </div>
+            </div>
+
+            <div class="cursor-pointer">
+              <div class="select">
+                <label for="symbols">Use symbols</label>
+              </div>
+              <div class="icon">
+                <input type="checkbox" id="symbols" name="symbols" checked class="toggle-checkbox" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="generate-password">
+          <button type="submit" class="genPass">
+            GENERATE PASSWORD <i class="ri-arrow-right-line"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script src="assets/JS/script.js"></script>
+</body>
+</html>

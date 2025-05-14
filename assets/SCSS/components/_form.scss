@@ -1,0 +1,352 @@
+/* === RESET Y ESTILOS BASE === */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+/* === LAYOUT PRINCIPAL === */
+main{
+    width: 100%;
+    min-width: 200px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1.1rem;
+}
+
+.container {
+    max-width: 550px;
+    min-width: 100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: .8rem;
+    text-align: center;
+    background-color: #0a0a0a; 
+    border-radius: 10px;
+}
+
+/* === FORMULARIO === */
+#passwordForm{
+    text-align: left;
+    p.up{
+        color: red;
+        font-size: 12px;
+        margin-bottom: .1rem;
+        color: #424242;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.select{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .6rem;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+/* === BOTONES === */
+button {
+    color: red;
+    border: none;
+    padding: 10px 1rem;
+    cursor: pointer;
+}
+
+/* === NOTIFICACION === */
+.notification {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px;
+    color: #ffffff;
+    z-index: 999;
+    animation: slideIn 0.5s forwards, slideOut 0.5s 2.5s forwards;
+    color: #fff;
+    background-color: #0a0a0a; 
+    border-radius: 5px;
+    text-align: center;
+}
+
+@keyframes slideIn {
+    0% { opacity: 0; bottom: -50px; }
+    100% { opacity: 1; bottom: 20px; }
+}
+
+@keyframes slideOut {
+    0% { opacity: 1; bottom: 20px; }
+    100% { opacity: 0; bottom: -50px; }
+}
+
+/* === SECCION DE CARACTERES === */
+.charecters{
+    display: flex;
+    font-weight: 400;
+    align-items: center;
+    color: #cdcec5;
+    padding: 12px 0rem;
+    flex-direction: column;
+}
+
+.charecters-align{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    font-size: 12px;
+
+    p{
+        margin-bottom: .1rem;
+        color: #424242;
+    }
+}
+
+#sliderValue {
+  text-align: center;
+  margin-left: 6px;
+  margin-bottom: .1rem;
+  color: #424242;
+}
+
+.input-container{
+    display: flex;
+    width: 100%;
+    height: 55px;
+    align-items: center;
+    align-content: center;
+    background-color: #141414;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 12px;
+    p{
+        margin: .8rem;
+    }
+}
+
+/* === SLIDER PERSONALIZADO === */
+input[type="range"] {
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 2px;
+  background: #fff;
+}
+
+input[type="range"]::-moz-range-track {
+  height: 2px;
+  background: #fff;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  background: var(--green);
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -6px;
+  transition: background-color 0.3s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background-color: var(--green);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  background: var(--green);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+    background-color: var(--green);
+}
+
+#lengthSlider{
+    max-width: 100%;
+    width: 100%;
+}
+
+#copyButton i{
+    color: var(--green);
+    font-size: 28px;
+    padding: 0;
+    left: 0;
+    height: 100%;
+    transition: background-color 0.3s;
+}
+
+#copyButton i:hover{
+    color: #8cd456;
+    transition: background-color 0.3s;
+}
+
+/* === PASSWORD BUTTONS === */
+.password-buttons{
+    display: flex;
+    height: 60px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #141414;
+    border-radius: 5px;
+    overflow: hidden;
+
+    #generatedPassword{
+        color: #fff; 
+        padding-left: 1rem; 
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex-grow: 1;
+        min-width: 0;
+    }
+}
+
+.password-buttons-2{
+    height: 60px;
+    display: flex;
+    #copyButton{
+        background-color: transparent;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+}
+
+.cursor-pinter-container{
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+}
+
+.cursor-pointer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #141414;
+  padding: .6rem;
+  height: 55px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 12px;
+
+p{
+    margin-bottom: .1rem;
+    color: #424242;
+}
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+}
+
+/* === TOGGLE SWITCH === */
+.toggle-checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 44px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+
+.toggle-checkbox::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 44px;
+  height: 24px;
+  background-color: #e0e0e0;
+  border-radius: 12px;
+  transition: background-color 0.3s;
+}
+
+.toggle-checkbox::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.toggle-checkbox:checked::before {
+  background-color: var(--green);
+}
+
+.toggle-checkbox:checked::after {
+  transform: translateX(20px);
+}
+
+/* === BOTON GENERAR === */
+.generate-password{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin-top: 1rem;
+    width: 100%;
+    border-radius: 5px;
+    height: 55px;
+    background-color: var(--green);
+}
+
+.genPass{
+    background-color: transparent;
+    color: #fff;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--bg-color);
+    font-weight: 500;
+    gap: .3rem;
+}
+
+.generate-password{
+      transition: background-color 0.3s;
+}
+
+.generate-password:hover{
+    background-color: #8cd456;
+    transition: background-color 0.3s;
+}

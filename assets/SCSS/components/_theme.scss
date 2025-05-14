@@ -1,0 +1,78 @@
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  color: var(--green);
+}
+.theme-toggle:hover {
+    color: #8cd456;
+    transition: background-color 0.3s;
+}
+.theme-toggle i {
+  font-size: 1.5rem;
+}
+
+.light-theme main{
+  background-color: #edf2f4 !important;
+}
+
+.light-theme {
+  color: #000000;
+}
+
+.light-theme .container {
+  background-color: #f5f5f5;
+  color: #000000;
+}
+
+.light-theme .password-buttons {
+  background-color: #e0e0e0;
+}
+
+.light-theme #generatedPassword {
+  color: #000000 !important;
+}
+
+.light-theme .theme-toggle {
+  color: var(--green);
+}
+
+.light-theme .theme-toggle:hover {
+    color: #8cd456;
+    transition: background-color 0.3s;
+}
+
+.light-theme .cursor-pointer{
+  background-color: #e0e0e0;
+  color: #000;
+}
+
+.light-theme .input-container {
+  background-color: #e0e0e0;
+  color: #000;
+}
+
+.light-theme input[type="range"] {
+  background: #000; 
+
+}
+
+.light-theme input[type="range"]::-webkit-slider-runnable-track {
+  background: #000;
+}
+
+.light-theme input[type="range"]::-moz-range-track {
+  background: #000;
+}
+
+.light-theme .notification{
+  background-color: #fff;
+  color: #000;
+}
