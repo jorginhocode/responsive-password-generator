@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<div class="container">
+    <div class="generator-container">
+        <div class="field-container">
+            <div class="field">
+                <input disabled class="inputField" type="text" name="password" autocomplete="off" placeholder='Press "Generate" to generate password' readonly>
+                <button class="copy-btn" id="copyBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z"></path>
+                    </svg>
+                </button>
+            </div>
+                <button id="generate">Generate</button>
+        </div>
+    
+        <div class="settings__container">
+            <div class="checkbox__container">
+                <div class="checkbox">
+                    <input type="checkbox" checked id="uppercase" name="uppercase" value="uppercase" class="checkbox__input">
+                    <label for="lowercase">Uppercase letters (A-Z)</label>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" checked id="lowercase" name="lowercase" value="lowercase" class="checkbox__input">
+                    <label for="lowercase">Lowercase letters (a-z)</label>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" checked id="numbers" name="numbers" value="numbers" class="checkbox__input">
+                    <label for="lowercase">Numbers (0-9)</label>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" checked id="symbols" name="symbols" value="symbols" class="checkbox__input">
+                    <label for="lowercase">Symbols (!@#)</label>
+                </div>
+            </div>
+
+            <div class="slider__container">
+                <div>
+                    <label style="color: #fffc; font-size:15px;">Password Length:</label>
+                    <label for="passwordLength" id="slider__label">12</label>
+                </div>
+                <input type="range" min="1" max="32" class="slider" value="12" style="background: linear-gradient(90deg, transparent 0%, rgb(0, 137, 65) 0.1%);">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const lowercaseLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    const uppercaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+    const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    const symbols = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '=', '-', ';', ':', ',', '.', '<', '>', '?', '/'];
+    const passwordLength = document.querySelector('.slider');
+    const generate = document.querySelector('#generate');
+    const sliderLabel = document.querySelector('#slider__label');
+
+    passwordLength.addEventListener('input', () => {
+        const value = passwordLength.value;
+        sliderLabel.innerText = value;
+    });
+
+    function generatePassword() {
+        const uppercaseCheckbox = document.querySelector('#uppercase').checked;
+        const lowercaseCheckbox = document.querySelector('#lowercase').checked;
+        const numbersCheckbox = document.querySelector('#numbers').checked;
+        const symbolsCheckbox = document.querySelector('#symbols').checked;
+
+        let chars = '';
+        if (uppercaseCheckbox) chars += uppercaseLetters.join('');
+        if (lowercaseCheckbox) chars += lowercaseLetters.join('');
+        if(numbersCheckbox) chars += numbers.join('');
+        if (symbolsCheckbox) chars += symbols.join('');
+
+        if (!chars) {
+            alert('Please select at least one character type');
+            return;
+        }
+
+        let password = "";
+        for (let i = 0; i < passwordLength.value; i++) {
+            password += chars[Math.floor(Math.random() * chars.length)];
+        }
+        
+        document.querySelector('.inputField').value = password;
+    }
+
+    document.querySelector('#generate').addEventListener('click', generatePassword);
+
+    const copyBtn = document.querySelector('#copyBtn');
+
+    copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(
+            document.querySelector('.inputField').value
+        );
+    });
+
+</script>
+</body>
+</html>

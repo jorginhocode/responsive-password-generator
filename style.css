@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'dm sans', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0d0f14;
+    padding: 1rem;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.generator-container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: 700px;
+    border: .5px solid #1e2230;
+    border-radius: 8px;
+    padding: 1.5rem;
+    background-color: #0d0f14;
+}
+
+input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+input::placeholder{
+    color: #728988;
+}
+
+.field-container{
+    display: flex;
+    gap: 1rem;
+}
+
+.field-container button{
+    background-color: transparent;
+    border: 0.5px solid #1e2230;
+    outline: none;
+    color: white;
+    padding: 2px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all .25s ease-in-out;
+    white-space: nowrap;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.field-container button:hover{
+    background-color: #262624;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    padding: 20px 24px;
+    border-radius: 8px;
+    background-color: #111520;
+    border: 0.5px solid #1e2230;
+    width: 100%;
+    overflow: hidden;
+}
+
+.copy-btn{
+    border: none !important;
+    outline: none;
+    padding: 0 !important;
+    background: transparent !important;
+    color: #fff;
+    display: flex;
+    align-items: center !important;
+}
+
+.copy-btn:hover{
+    color: #4a8fff;
+}
+
+.copy-btn svg{
+    width: 22px;
+    height: 22px;
+}
+
+.settings__container{
+    background-color: #111520;
+    padding: 20px 24px;
+    border-radius: 8px;
+}
+
+.checkbox__container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem 2rem;
+}
+
+.checkbox__input{
+    width: auto;
+}
+
+.checkbox{
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+.checkbox label{
+    color: #fffc;
+    font-size: 15px;
+}
+
+.slider__container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin-top: 2rem;
+}
+
+.slider__container input{
+    accent-color: #4a8fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#slider__label{
+    font-size: 15px;
+    color: #fff;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #0d0f14;
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    flex-shrink: 0;
+}
+
+input[type="checkbox"]:checked {
+    background-image: url("https://password.kaspersky.com/wp-content/themes/passchck/images/checkbox-checked.svg");
+    background-size: 110%;
+}
+
+@media (max-width: 768px){
+
+    .generator-container{
+        padding: 1rem;
+    }
+
+    .field-container{
+        flex-direction: column;
+    }
+
+    .field-container button{
+        width: 100%;
+    }
+
+    .checkbox__container{
+        grid-template-columns: 1fr;
+    }
+
+    .checkbox label{
+        font-size: 14px;
+    }
+
+    input{
+        font-size: 1rem;
+    }
+
+    .field,
+    .field-container button,
+    .settings__container{
+        padding: 16px;
+    }
+}
+
